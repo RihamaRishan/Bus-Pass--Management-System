@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Travel Destinations</title>
+<link rel="stylesheet" href="styles.css">
+<style>
+.container {
+    width: 100%;
+}
+
+.full-height {
+    height: 100vh;
+}
+
+.rel {
+    position: relative;
+}
+
+.tagline {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: #f4f4f4;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.tagline span {
+    font-size: 20px;
+    font-weight: bold;
+}
+
+.tagline ul {
+    list-style-type: none;
+    padding: 0;
+}
+
+.tagline li {
+    margin-bottom: 5px;
+    cursor: pointer;
+    display: none; /* Hide all list items initially */
+}
+
+.tagline li.active {
+    color: blue;
+    display: block; /* Display the active list item */
+}
+
+</style>
+<script>
+document.addEventListener("DOMContentLoaded", function() {
+    var listItems = document.querySelectorAll(".tagline li");
+    var index = 0;
+    
+    function displayNext() {
+        listItems[index].classList.add("active");
+        index++;
+        if (index < listItems.length) {
+            setTimeout(displayNext, 1000); // Adjust the delay here (in milliseconds)
+        }
+    }
+    
+    displayNext();
+    
+    listItems.forEach(function(item) {
+        item.addEventListener("click", function() {
+            listItems.forEach(function(li) {
+                li.classList.remove("active");
+            });
+            this.classList.add("active");
+        });
+    });
+});
+</script>
+</head>
+<body>
+<div class="container full-height">
+    <div class="rel full-height">
+        <div class="tagline" id="tagline">
+            <span>Travel to</span>
+            <ul>
+                <li>Jaffna</li>
+                <li>Batticaloa</li>
+                <li>Ampara</li>
+                <li>Trincomalee</li>
+                <li>Mannar</li>
+                <li>Hatton</li>
+                <li>Badulla</li>
+                <li>Matara</li>
+                <li>Anuradhapura</li>
+                <li>Polannaruwa</li>
+                <li>Hambantota</li>
+                <li>Kilinochi</li>
+                <li>Vavuniya</li>
+                <li>Mullaiththivu</li>
+                <li>Gampaha</li>
+                <li>Kalutara</li>
+                <li>Galle</li>
+                <li>Matale</li>
+                <li>Nuwara Eliya</li>
+                <li>Moneragala</li>
+                <li>Kegalle</li>
+                <li>Ratnapura</li>
+                <li>Kuruenegala</li>
+                <li>Puttalam</li>
+                <li>Colombo</li>
+            </ul>
+        </div>
+    </div>
+</div>
+</body>
+</html>

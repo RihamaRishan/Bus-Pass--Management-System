@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
+
+    <style>
+        *{
+            padding: 0;
+            margin: 0;
+            font-family: Arial, Helvetica, sans-serif;
+            box-sizing: border-box;
+        }
+
+    body{
+         width: 100%;
+         height:100vh;
+         background-image: url(image/h1.jpeg);
+         background-repeat: no-repeat;
+         background-position: center;
+         background-size: cover;
+       
+       
+        }
+        nav{
+            width:100%;
+            height:10vh;
+           display: flex;
+            justify-content: space-around;
+            align-items: center;
+            color: white;
+        }
+        nav .logo img{
+           
+           width: 100px;
+           height: 100px;
+           margin-right: 700px; 
+            margin-top: 50px;
+            border-radius: 50px;
+        }
+        .links{
+            display: flex;
+        }
+
+        nav .links a{
+            color: white;
+            text-decoration: none;
+            font-size: 1.2rem;
+            margin: 0 10px;
+            display: flex;
+            flex-direction:row;
+        }
+        nav .links a:hover{
+            text-decoration: underline;
+        }
+        nav {
+    width: 100%;
+    height: 10vh;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    color: white;
+    
+                    }
+        nav .buttons{
+            width: 250px;
+            height: 10vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+        nav .buttons button{
+            margin: 0 5px;
+            width: 40%;
+            height: 5vh;
+            border-radius: 5px;
+            border: none;
+            outline: none;
+            font-size: 1.1rem;
+            font-weight: 700;
+            color: white;
+            background-color:black;
+            transition: 0.2s linear;
+        }
+        .buttons button:hover{
+            color: rgb(7, 113, 219);
+            background-color: transparent;
+            border: 2px solid  rgb(7, 113, 219); 
+         box-shadow: 0 0 10px 4px  rgb(7, 113, 219);
+        }
+        nav .buttons button a {
+            list-style-type: none;
+            text-decoration: none;
+            color: white;
+        }
+        section{
+              width: 100%;
+              height: 75vh;
+              display: flex;
+              justify-content: center;
+              align-items: center;
+        }
+        .contant{
+            width: 40%;
+            text-align: center;
+            color:rgb(255, 254, 254);
+        }
+        .contant h1{
+            font-size: 3rem;
+        }
+        .contant p{
+            width: 60%;
+            margin: 20px 20%;  
+              
+        }
+        .contant button{
+            width: 40%;
+            height: 7vh;
+            border-radius: 10px;
+            background:  black;
+            border: none;
+            outline: none;
+            color: white;
+            cursor: pointer;
+            font-size: 1.2rem;
+            font-weight: 700;
+            transition: 0.2s linear;
+
+        }
+        .contant button:hover{
+            scale: 1.1;
+            background-color: transparent;
+            backdrop-filter: brightness(40%);
+            color: rgb(188, 89, 67) ;
+            border: 1px solid  rgb(7, 113, 219);
+            box-shadow:  0 0 10px 3px  rgb(7, 113, 219);
+        }
+        .contant button a{
+            list-style-type: none;
+            text-decoration: none;
+            color: white;
+        }
+    </style>
+</head>
+<body>
+    <nav>
+        <div class="logo">
+            <img src="image/logo.jpg" alt="">
+        </div>
+        <div class="links">
+            <div class="link" data-aos="fade-up" data-aos-duration="1200"> <a href="index.html">Home
+
+            </a></div>
+            <div class="link"data-aos="fade-up" data-aos-duration="1200" data-aos-delay="100"> <a href="about.html">About</a></div>
+            <div class="link"data-aos="fade-up" data-aos-duration="1200"data-aos-delay="200"><a href="">Services</a></div>
+            <!-- <div class="link"data-aos="fade-up" data-aos-duration="1200"data-aos-delay="300"> <a href="">Case Studies</a></div>
+            <div class="link"data-aos="fade-up" data-aos-duration="1200"data-aos-delay="400">  <a href="">Pages</a></div>
+            <div class="link"data-aos="fade-up" data-aos-duration="1200"data-aos-delay="500">   <a href="">Blog</a></div> -->
+            <div class="link"data-aos="fade-up" data-aos-duration="1200"data-aos-delay="300"> <a href="contact.html">Contact</a></div> 
+             
+        </div>
+         <div class="buttons">
+            <button data-aos="fade-up" data-aos-duration="1200"data-aos-delay="800"><a href="login.html">Login</a></button>
+            <button data-aos="fade-up" data-aos-duration="1200"data-aos-delay="900"><a href="login.html">Book Now</a></button>
+        </div>
+    </nav>
+    <section>
+        <div class="contant">
+            <h1 data-aos="fade-right" data-aos-duration="2000"data-aos-delay="900">Safe travels! <br>Get there happy! <br>
+                The smarter way to manage your bus pass. </h1>
+            <p data-aos="fade-left" data-aos-duration="2000"data-aos-delay="1000">We are Always at your fingertips - Smoother, stress free ride - Joyride!
+                For Your safe travels Choose us today.</p>
+            <button data-aos="zoom-in" data-aos-duration="2000"data-aos-delay="1200"><a href="pass.html">GET YOUR BUS PASS</a></button>
+        </div>
+    </section>
+    <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
+    <script>
+      AOS.init();
+    </script>
+
+</body>
+</html>

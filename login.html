@@ -1,0 +1,475 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Document</title>
+    
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+<style>
+    *{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: poppins,sans-serif;
+}
+body{
+    background: url(image/m6.jpg);
+    background-repeat: no-repeat;
+    background-size:100% 100%;
+    background-attachment: fixed;
+     background-position: center; 
+    
+}
+.wrapper{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 110vh;
+    background: rgba(39,39,39,0.4);
+}
+.nav{
+    position: fixed;
+    top: 0;
+    display: flex;
+    justify-content: space-around;
+    width: 100%;
+    height: 100px;
+    line-height: 100px;
+    background: linear-gradient(rgba(39,39,39,0.6) transparent);
+    z-index: 100;
+}    
+
+.nav-logo img{
+    width: 100px;
+    margin: 20px;
+}
+.nav-menu ul{
+    display: flex;  
+}
+.nav-menu ul li{
+    list-style-type: none;
+}
+.nav-menu ul .link{
+    text-decoration: none;
+    font-weight: 600;
+    color: #fff;
+    padding-bottom: 15px;
+    margin: 0 25px;
+}
+ .link:hover,.active{
+    border-bottom: 2px solid #fff;
+} 
+.nav-menu ul .link:hover, .nav-menu ul .active {
+    border-bottom: 2px solid #fff;
+}
+
+.nav-button .btn{
+    width: 130px;
+    height: 40px;
+    font-weight: 500;
+    background: rgba(255,255,255,0.4);
+    border: none;
+    border-radius: 30px;
+    cursor: pointer;
+}
+#registerBtn{
+    margin-left: 15px;
+}
+.btn.white-btn{
+    background: rgba(255,255,255,0.7);
+   
+}
+.btn .btn .white-btn:hover{
+background: rgba(255,255,255,0.7);
+}
+.nav-button .btn:hover {
+    background: rgba(255,255,255,0.7);
+}
+.nav-menu-btn{
+    display: none;
+}
+.form-box{
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 512px;
+    height: 420px;
+    overflow: hidden;
+    z-index: 2;
+    margin-left: 400px;
+    margin-top: 100px;
+}
+.register-container{
+    position:absolute;
+    right: -520px;
+    width: 500px;
+    display: flex;
+    flex-direction: column;
+    transition: 0.5s ease-in-out;
+}
+.login-container{
+    position:absolute;
+    left:4px ;
+    width: 500px;
+    display: flex;
+    flex-direction: column;
+    transition: 0.5s ease-in-out;
+
+}
+.top span{
+    color: rgb(252, 248, 251);
+   font-size: 18px;
+   padding: 10px 0;
+   display: flex;
+   justify-content: center;
+}
+
+.top span a{
+    font-weight: 500;
+    color: #f5f4f2e3;
+    margin-left: 5px;
+}
+header{
+    color: #fff;
+    font-size: 30px;
+    text-align: center;
+    padding: 10px 0 30 0;
+    margin-bottom: 15px;
+}
+.two-forms{
+    display: flex;
+    gap: 10px;
+}
+.input-field{
+    font-size: 15px;
+    background: rgba(255,255,255,0.2);
+    color: #fff;
+    height: 50px;
+    width: 100%;
+    padding: 0 10px 0 45px;
+    border: none;
+    border-radius: 30px;
+    outline: none;
+    transition: .2s ease;
+}
+.input-field input{
+    color: black;
+}
+.input-field:hover,.input-field:focus{
+    background: rgba(255,255,255,0.25);
+}
+::-webkit-input-placeholder{
+    color: #fff;
+
+}
+.input-box i{
+    position: relative;
+    top: -35px;
+    left: 17px;
+    /* color: white; */
+    color: black;
+  
+}
+.submit{
+    font-size: 15px;
+    font-weight: 600;
+    color: black;
+    height: 45px;
+    width: 100%;
+    border: none;
+    border-radius: 30px;
+    outline: none;
+    background: rgba(255,255,255,0.7);
+    cursor: pointer;
+    transition: 0.3s ease-in-out;
+}
+.submit:hover{
+    background: rgba(255,255,255,0.5);
+    box-shadow: 1px 5px 7px 1px rgba(255,255,255,0.2);
+}
+.two-col{
+    display: flex;
+    justify-content: space-between;
+    color: #fff;
+    font-size: 15px;
+    margin-top: 10px;
+}
+.two-col .one{
+    display: flex;
+    gap: 5PX;
+}
+.two label a{
+    text-decoration: none;
+    color: #fff;
+    font-size:15px ;
+    
+}
+.two label a :hover{
+    text-decoration: underline;
+    
+}
+@media only screen and (max-width:786px) {
+    .nav-button{
+        display: none;
+    }
+    .nav-menu.responsive{
+        top: 100px;
+    }
+    .nav-menu{
+        position: absolute;
+        top: -800px;
+        display: flex;
+        justify-content: center;
+        background: rgba(255,255,255,0.2);
+        width: 100%;
+        height: 90vh;
+        backdrop-filter: blur(20px);
+        transition: 0.3s;
+    }
+    .nav-menu ul{
+        flex-direction: column;
+        text-align: center;
+
+    }
+    .nav-menu-btn{
+        display: block;
+    }
+    .nav-menu-btn i{
+        font-size: 25px;
+        color: #fff;
+        padding: 10px;
+        background: rgba(255,255,255,0.2);
+        border-radius: 50%;
+        cursor: pointer;
+        transition: 0.3s;
+    }
+    .nav-menu-btn i:hover{
+        background: rgba(255,255,255,0.15);
+    }
+}
+@media only screen and (max-width:540px) {
+    .wrapper{
+        min-height: 100vh;
+    }
+    .form-box{
+        width: 100%;
+        height: 500px;
+      
+    }
+    .register-container,.login-container{
+        width: 100%;
+        padding: 0 20px;
+    }
+    .register-container .two-col{
+        flex-direction: column;
+        gap: 0;
+    }   
+} 
+
+</style>
+</head>
+
+<body>
+    <nav class="nav">
+        <div class="nav-logo">
+           <img src="image/l.jpeg" alt="">
+        </div>
+        <div class="nav-menu" id="navMenu">
+            <ul>
+                <li><a href="index.html" class="link"> HOME</a></li>
+                <li><a href="contAct.html" class="link">CONTACT</a></li>
+                <li><a href="about.html" class="link">ABOUT US</a></li>
+              
+            </ul>
+        </div>
+        <div class="nav-button">
+            <button class="btn" id="loginBtn" onclick="login()">Sign In</button>
+            <button class="btn" id="registerBtn" onclick="register()">Sign up</button>
+        </div>
+        <div class="nav-menu-btn">
+            <i class="bx-bx-menu"></i>
+            <i class="fa fa-bars" onclick="myMenuFunction()"></i>
+        </div>  
+    </nav>
+    <!-- form box -->
+    <div class="form-box">
+
+        <!-- login -->
+        <!-- login -->
+<div class="login-container" id="login">
+    <div class="top">
+        <span> Don't have an account? <a href="#" onclick="register()">Sign up</a></span>
+        <header>Login</header>
+    </div>
+    <form id="loginForm" action="LoginProcess.php" method="post">
+        <div class="input-box">
+            <input type="email"  id="email" name="email" id="login-email" class="input-field" placeholder="Email" required>
+            <i class="fa fa-envelope"></i>
+        </div>
+        <div class="input-box">
+            <input type="password"id="password" name="password" id="login-password" class="input-field" placeholder="Password" required>
+            <i class="fa fa-lock"></i>
+        </div>
+        <div class="input-box">
+            <input type="submit" class="submit" value="Sign In">
+        </div>
+        <div class="two-col">
+            <div class="one">
+                <input type="checkbox" id="login-check">
+                <label for="login-check">Remember Me</label>
+            </div>
+            <div class="two">
+                <label><a href="#">Forgot Password?</a></label>
+            </div>
+        </div>
+    </form>
+</div>
+
+       <!-- rigister -->
+<div class="register-container" id="register">
+    <div class="top">
+        <span>Have an account? <a href="#" onclick="login()">Login</a></span>
+        <header>sign up</header>
+    </div>
+    <form id="registerForm" action="RegisterPage.php" method="post">
+        <div class="two-forms">
+            <div class="input-box">
+                <input type="text" id="firstname" name="firstname" class="input-field" placeholder="Firstname">
+                <i class="fa fa-bars"></i>
+            </div>
+            <div class="input-box">
+                <input type="text" id="lastname" name="lastname" class="input-field" placeholder="Lasttname">
+                <i class="fa fa-bars"></i>
+            </div>
+        </div>
+        <div class="input-box">
+            <input type="email" id="email" name="email" class="input-field" placeholder="E-mail">
+            <i class="fa fa-bars"></i>
+        </div>
+        <div class="input-box">
+            <input type="password" id="password" name="password" class="input-field" placeholder="Password">
+            <i class="fa fa-bars"></i>
+        </div>
+        <div class="input-box">
+            <input type="submit" class="submit" value="Register">
+        </div>
+        <div class="two-col">
+            <div class="one">
+                <input type="checkbox" id="register-check">
+                <label for="register-check">Remember Me</label>
+            </div>
+            <div class="two">
+                <label><a href="#">Terms and Condition</a></label>
+            </div>
+        </div>
+    </form>
+</div>
+
+<!--  displaying success message -->
+<div id="registrationSuccessMessage" style="display: none; color: green; text-align: center;"></div>
+
+<script>
+
+    function myMenuFunction(){
+        var i =document.getElementById("navMenu");
+
+        if(  i. className ==="nav-menu"){
+            i.className +="responsive"
+        }
+        else{
+            i.className ="nav-menu";
+        }
+
+    }
+</script>
+<script>
+    var a=document.getElementById("loginBtn");
+    var b=document.getElementById("registerBtn");
+    var x=document.getElementById("login");
+    var y=document.getElementById("register");
+
+    function login(){
+        x.style.left ="4px";
+        y.style.right ="-520px";
+        a.className +=" white-btn";
+        b.className="btn";
+        x.style.opacity =1;
+        y.style.opacity =0;
+    }
+    function register(){
+        x.style.left ="-510px";
+        y.style.right ="5px";
+        a.className ="btn";
+        b.className  +=" white-btn";
+        x.style.opacity =0;
+        y.style.opacity =1;
+    }
+</script>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+<script>
+    $(document).ready(function() {
+        $('#registerForm').submit(function(event) {
+            event.preventDefault(); 
+
+            // Get form data
+            var formData = $(this).serialize();
+
+            // Send AJAX request
+            $.ajax({
+                type: 'POST',
+                url: 'RegisterPage.php', 
+                data: formData,
+                success: function(response) {
+                    if (response.trim() === 'success') {
+                        $('#registrationSuccessMessage').html('Registration successful!').show();
+                        window.location.href = 'index.html';
+                    } else {
+                        alert('Registration failed. Please try again.');
+                    }
+                },
+                error: function() {
+                    alert('Registration failed. Please try again.');
+                }
+            });
+        });
+    });
+</script>
+
+<!-- <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script>
+        $(document).ready(function() {
+            $('#loginForm').submit(function(event) {
+                event.preventDefault(); // Prevent default form submission
+
+                var email = $('#email').val();
+                var password = $('#password').val();
+
+                $.ajax({
+                    type: 'POST',
+                    url: 'LoginProcess.php',
+                    data: {
+                        email: email,
+                        password: password
+                    },
+                    success: function(response) {
+                        if (response.trim() === 'success') {
+                            // Redirect to index.html upon successful login
+                            window.location.href = 'index.html';
+                        } else {
+                            alert('Invalid email or password. Please try again.');
+                        }
+                    },
+                    error: function() {
+                        alert('Login failed. Please try again.');
+                    }
+                });
+            });
+        });
+    </script> -->
+
+</body>
+</html>

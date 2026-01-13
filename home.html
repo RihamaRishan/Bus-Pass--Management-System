@@ -1,0 +1,207 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+   
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
+    <style>
+        body {
+            -webkit-text-size-adjust: 100%;
+            -webkit-tap-highlight-color: rgba(0,0,0,0);
+            color: #484848;
+            font-family: 'Nunito Sans', sans-serif;
+            font-size: 16px;
+            line-height: 1.6em;
+            font-weight: 300;
+            box-sizing: border-box;
+        }
+        body::-webkit-scrollbar {
+            display: none;
+        }
+        nav {
+            width: 100%;
+            height: 10vh;
+            display: flex;
+            justify-content: space-around;
+            align-items: center;
+            color: white;
+        }
+        nav .logo img {
+            width: 80px;
+            height: 80px;
+            margin-right: 600px;
+            margin-top: 50px;
+        }
+        .links {
+            display: flex;
+        }
+        nav .links a {
+            color:black;
+            text-decoration: none;
+            font-size: 1.2rem;
+            margin: 0 10px;
+            display: flex;
+            flex-direction:row;
+            font-weight: bold;
+        }
+        nav .links a:hover {
+            text-decoration: underline;
+        }
+        nav {
+            width: 100%;
+            height: 10vh;
+            display: flex;
+            justify-content: space-around;
+            align-items: center;
+            color: white;
+        }
+        .rel {
+            position: relative;
+        }
+        .tagline {
+           position:relative;
+            top: 50%;
+            left: 30%;
+            transform: translate(-50%, -50%);
+            background-color: -webkit-linear-gradient(top, #8bc0df 39%, #e9e9e9 70%);
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            margin-top: 300px;
+            width: 30%;
+        }
+        .tagline span {
+            font-size: 20px;
+            font-weight: bold;
+        }
+        .tagline ul {
+            list-style-type: none;
+            padding: 0;
+        }
+        .tagline li {
+            position: absolute;
+            /* margin-bottom: 5px; */
+            cursor: pointer;
+            display: none; /* Hide all list items initially */
+            font-size: 40px;
+            color: black;
+            margin-left: 180px;
+            margin-bottom: 100px;
+            font-weight: bold;
+        
+        }
+        .tagline li.active {
+            color:black;
+            display: block; /* Display the active list item */
+        }
+    </style>
+</head>
+<body>
+
+    <nav>
+        <div class="logo">
+            <img src="image/ji.jpeg" alt="">
+        </div>
+        <div class="links">
+            <div class="link" data-aos="fade-up" data-aos-duration="1200"> <a href="index.html">Home  </a></div>
+            <div class="link" data-aos="fade-up" data-aos-duration="1200" data-aos-delay="100"> <a href="about.html">About</a></div>
+            <div class="link" data-aos="fade-up" data-aos-duration="1200" data-aos-delay="600"> <a href="contact.html">Contact</a></div>  
+        </div>
+    </nav>
+
+    <div class="rel full-height">
+        <div class="tagline" id="tagline"> <!-- Remove the active class to hide the container initially -->
+           <h1>
+           Travel to</h1>
+            <ul>
+                <li>Jaffna</li>
+                <li>Batticaloa</li>
+                <li>Ampara</li>
+                <li>Trincomalee</li>
+                <li>Mannar</li>
+                <li>Hatton</li>
+                <li>Badulla</li>
+                <li>Matara</li>
+                <li>Anuradhapura</li>
+                <li>Polannaruwa</li>
+                <li>Hambantota</li>
+                <li>Kilinochi</li>
+                <li>Vavuniya</li>
+                <li>Mullaiththivu</li>
+                <li>Gampaha</li>
+                <li>Kalutara</li>
+                <li>Galle</li>
+                <li>Matale</li>
+                <li>Nuwara Eliya</li>
+                <li>Moneragala</li>
+                <li>Kegalle</li>
+                <li>Ratnapura</li>
+                <li>Kuruenegala</li>
+                <li>Puttalam</li>
+                <li>Colombo</li>
+            </ul>
+        </div>
+    </div>
+    
+    <form action="buses" method="POST" class="frm">
+        <input type="hidden" name="_csrf" value="1fe638c7-307b-46a8-add8-bbd18d11125d">
+        
+        <p>The simplest way to book your bus tickets in Sri Lanka</p>
+        <div class="filter">
+            <div class="search-box">
+                <div class="row">
+                    <input type="text" id="input-box" placeholder="FROM" autocomplete="off" >
+                    <button><i class="fa fa-search"></i></button>
+                </div>
+                <div class="result-box">
+                </div>
+            </div>
+            <div class="search-box1">
+                <div class="row">
+                    <input type="text" id="input-box1" placeholder="TO" autocomplete="off" >
+                    <button><i class="fa fa-search"></i></button>
+                </div>
+                <div class="result-box1">
+                </div>
+            </div>
+            <input type="submit" name="" value="Search" class="btn">
+        </div>
+        
+        <div class="checkbox">
+            <a href="contuct.html">Need help?</a>
+        </div>
+    </form>
+
+    <p>"I'm very happy with the service provided. Buses are always on time</p>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+            const districts = document.querySelectorAll('.tagline li');
+            let index = 0;
+
+            function showNextDistrict() {
+                districts.forEach((district, i) => {
+                    if (i === index) {
+                        district.classList.add('active');
+                    } else {
+                        district.classList.remove('active');
+                    }
+                });
+                index = (index + 1) % districts.length;
+            }
+
+            showNextDistrict(); // Show the first district initially
+
+            setInterval(showNextDistrict, 2000); // Automatically switch districts every 2 seconds
+        });
+    </script>
+    <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
+    <script>
+        AOS.init();
+    </script>
+</body>
+</html>

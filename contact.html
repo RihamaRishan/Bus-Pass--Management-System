@@ -1,0 +1,215 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css" 
+    integrity="sha512-z3gLpd7yknf1YoNbCzqRKc4qyor8gaKU1qmn+CShxbuBusANI9QpRohGBreCFkKxLhei6S9CQXFEbbKuqLg0DA==" 
+    crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href=".css">
+  
+    <style>
+        body{
+          
+       background: -webkit-linear-gradient(top, #8bc0df 39%, #e9e9e9 70%);
+       background: -webkit-linear-gradient(top, #8bc0df 39%, #e9e9e9 70%);
+        }
+        body::-webkit-scrollbar {
+           display: none;
+             }
+        section{
+            padding: 40px 15%;
+        }
+        nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 10px;
+            background-color: rgba(177, 215, 248, 0.8);
+        }
+        nav img {
+            width: 50px;
+            height: 50px;
+        }
+        .navi ul {
+            list-style-type: none;
+            display: flex;
+            margin: 0;
+            padding: 0;
+        }
+        .navi ul li {
+            margin-left: 20px;
+        }
+        .navi ul li a {
+            text-decoration: none;
+            color: #333;
+            font-weight: bold;
+        }
+        .navi ul li a:hover {
+            color: #006ab3;
+        }
+
+        .contact{
+            background: black;
+            height: 100%;
+            width: 75%;
+            min-height: 100vh;
+            display: grid;
+            grid-template-columns: repeat(2,2fr);
+            align-items: center;
+            grid-gap: 6rem;
+            margin-top: 100PX;
+        }
+        .contact-image img{
+            max-width: 90%;
+            width: 500px;
+            height: auto;
+            border-radius: 10px;
+        }
+        .contact-form h1{
+            font-size: 80px;
+            color: #fff;
+            margin-bottom: 20px;
+
+        }
+        span{
+            color: #f9004d;
+        }
+        .contact-form p{
+            color: #c6c9d8bf;
+            letter-spacing: 1px;
+            line-height: 26px;
+            font-size: 1.1rem;
+            margin-bottom: 3.8rem;
+        }
+        .contact-form a{
+            list-style-type: none;
+            text-decoration: none;
+            margin-bottom: 20px;
+            font-size: 18px;
+            color: #f9004d;
+        }
+        .contact-form form{
+            position: relative;
+            
+        }
+        .contact-form form input,
+        form textarea{
+            width: 100%;
+            padding: 17px;
+            border: none;
+            outline: none;
+            background: #191919;
+            color: #fff;
+            font-size: 1.1rem;
+            margin-bottom: 0.7rem;
+            border-radius: 10px; 
+        
+        }
+        .contact-form textarea{
+            resize: none;
+            height: 200px;
+        }
+        .contact-form .btn{
+            display: inline-block;
+            background-color:#f9004d;
+            font-size: 1.1rem;
+            letter-spacing: 1px;
+            text-transform: uppercase;
+            font-weight: 600px;
+            border: 2px solid transparent;
+            border-radius: 10px;
+            width: 220px;
+            transition: ease .20s;
+            cursor: pointer;
+
+        }
+        .contact-form .btn:hover{
+            border: 2px solid #f9004d;
+            background: transparent;
+            transform: scale(1.1);
+         
+
+        }
+         @media(max-width:1570px){
+            .section{
+                padding: 80px 3%;
+                transition: .2S;
+            }
+            .contact-form h1{
+                font-size: 60px;
+            }
+            .contact-form p{
+                margin-bottom: 3rem;
+            }
+
+        }
+        @media(max-width:1090px){
+            .contact{
+                grid-gap: 2rem;
+                transition: 3s;
+            }
+        }
+        @media(max-width:1000px){
+            .contact{
+                grid-template-columns: 1fr;
+            }
+            .contact-form{
+                order: 1;
+            }
+            .contact-image img{
+                max-width: 100%;
+                width: 100%;
+                height: auto;
+                text-align: center;
+                margin-bottom: 30px;
+            }
+        } 
+       
+
+
+    </style>
+
+</head>
+<body>
+    <nav>
+        <img src="image/logo.jpg" alt="Logo">
+        <div class="navi">
+            <ul>
+                <li><a href="index.html">HOME</a></li>
+                <li><a href="#">CONTACT</a></li>
+                <li><a href="about.html">ABOUT US</a></li>
+            </ul>
+        </div>
+    </nav>
+    <section class="contact">
+        <div class="contact-form">
+            <h1>Contact <span>Us</span></h1>
+            <p>Any Questions about your bus pass? Contact us today!
+                We're here to assist you!
+                
+                Get in Touch; We'd Love to Hear From You!
+                We are Here to Help; Let's Chat!<br>
+                E-mail: <a href="email.com"> Primetravels@gmail.com</a> <br>
+                 Phone: <a href="">0758070600</a>
+            </phone:0758070600></p>
+            
+                <form action="contuct.php" method="post">
+                    <input type="text" id="yourname" name="yourname" placeholder="Your Name" required>
+                    <input type="email" name="email" id="email" placeholder="E-mail" required>
+                    <input type="text" id="writeasubject" name="writeasubject" placeholder="Write a subject" required>
+                    <textarea name="" id="yourmessage" name="yourmessage" cols="30" rows="10" placeholder="Your Message"></textarea>
+                    <input type="submit" name="" value="submit" class="btn">
+    </form>
+        </div>
+        <div class="contact-image">
+            <img src="image/b3.jpg">
+        </div>
+    </section>
+
+
+  
+    
+</body>
+</html>
